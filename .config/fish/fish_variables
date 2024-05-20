@@ -2,6 +2,7 @@
 # VERSION: 3.0
 SETUVAR --export OPENAI_API_KEY:sk\x2dnzPejOM4Z1TIAyTcYnzIT3BlbkFJh26TYPoWYas3Oyq3UTkN
 SETUVAR --export --path PKG_CONFIG_PATH:/opt/homebrew/Cellar/openssl\x403/3\x2e1\x2e3/lib/pkgconfig
+SETUVAR --export PYENV_ROOT:/Users/samyok/\x2epyenv
 SETUVAR __fish_initialized:3400
 SETUVAR _fisher_edc_2F_bass_files:/Users/samyok/\x2econfig/fish/functions/__bass\x2epy\x1e/Users/samyok/\x2econfig/fish/functions/bass\x2efish
 SETUVAR _fisher_franciscolourenco_2F_done_files:/Users/samyok/\x2econfig/fish/conf\x2ed/done\x2efish
@@ -54,6 +55,6 @@ SETUVAR fish_pager_color_selected_background:\x2d\x2dreverse
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/Users/samyok/\x2edotnet/tools\x1e/opt/homebrew/opt/dotnet\x406/bin\x1e/opt/homebrew/opt/openjdk\x4011/bin\x1e/opt/homebrew/bin\x1e/Users/samyok/\x2eyarn/bin\x1e/Users/samyok/\x2efig/bin\x1e/Users/samyok/\x2elocal/bin\x1e/Users/samyok/Library/Application\x20Support/JetBrains/Toolbox/scripts\x1e/Users/samyok/\x2ecargo/bin
+SETUVAR fish_user_paths:/Users/samyok/\x2epyenv/bin\x1e/opt/homebrew/opt/libxslt/bin\x1e/opt/homebrew/opt/libxml2/bin\x1e/Users/samyok/\x2edotnet/tools\x1e/opt/homebrew/opt/dotnet\x406/bin\x1e/opt/homebrew/opt/openjdk\x4011/bin\x1e/opt/homebrew/bin\x1e/Users/samyok/\x2eyarn/bin\x1e/Users/samyok/\x2efig/bin\x1e/Users/samyok/\x2elocal/bin\x1e/Users/samyok/Library/Application\x20Support/JetBrains/Toolbox/scripts\x1e/Users/samyok/\x2ecargo/bin
 SETUVAR nvm_data:/Users/samyok/\x2elocal/share/nvm
 SETUVAR nvm_mirror:https\x3a//nodejs\x2eorg/dist

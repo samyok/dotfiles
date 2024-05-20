@@ -21,6 +21,7 @@ nvm use default --silent
 
 alias nproc="sysctl -n hw.logicalcpu"
 alias cls="clear";
+alias ghc="gh copilot suggest"
 alias gst="git status";
 alias gtk="sh /usr/local/bin/gitkraken -p  .";
 alias dbld="docker-compose build";
@@ -166,3 +167,9 @@ function cdact
 end
   export DOTNET_ROOT="/opt/homebrew/opt/dotnet@6/libexec"
 export FISH_WAKATIME_DISABLED=true
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+pyenv init - | source
+
