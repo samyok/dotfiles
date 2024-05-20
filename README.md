@@ -19,3 +19,6 @@ stow -D <packagename> # delete stowed package
 stow -R <packagename> # restows package
 ```
 
+## credits
+
+stow guide from deepak's blog: https://dr563105.github.io/blog/manage-dotfiles-with-gnu-stow/
