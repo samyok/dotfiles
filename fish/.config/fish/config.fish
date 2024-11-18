@@ -1,15 +1,15 @@
 fish_vi_key_bindings
 
 function nvm
-   bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
+    bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
 end
 
 function portkill
-   lsof -t -i:$argv | xargs kill -9
+    lsof -t -i:$argv | xargs kill -9
 end
 
 function hourskill
-   docker container stop hours_mongo_{1,2,3}
+    docker container stop hours_mongo_{1,2,3}
 end
 
 function toico
@@ -20,19 +20,20 @@ set -x NVM_DIR ~/.nvm
 nvm use default --silent
 
 alias nproc="sysctl -n hw.logicalcpu"
-alias cls="clear";
+alias cls="clear"
 alias ghc="gh copilot suggest"
-alias gst="git status";
-alias gtk="sh /usr/local/bin/gitkraken -p  .";
-alias dbld="docker-compose build";
-alias dup="docker-compose up -d";
-alias ddwn="docker-compose down --remove-orphans";
-alias dl="docker-compose logs -f";
-alias dcrm="docker rm (docker ps -a -f status=exited -q)";
-alias yrn="npx yarn@2";
-alias gcp="git cherry-pick";
-alias gc="git commit";
-alias gcundo="git reset --soft HEAD~1";
+alias ghcs="gh copilot suggest -s fish"
+alias gst="git status"
+alias gtk="sh /usr/local/bin/gitkraken -p  ."
+alias dbld="docker-compose build"
+alias dup="docker-compose up -d"
+alias ddwn="docker-compose down --remove-orphans"
+alias dl="docker-compose logs -f"
+alias dcrm="docker rm (docker ps -a -f status=exited -q)"
+alias yrn="npx yarn@2"
+alias gcp="git cherry-pick"
+alias gc="git commit"
+alias gcundo="git reset --soft HEAD~1"
 alias gpr="gh pr checkout"
 alias gd="git diff"
 alias pro="gh pr view --web"
@@ -46,6 +47,7 @@ alias ghot="git log --pretty=format: --name-only | sort | uniq -c | sort -rg | h
 alias ytdl="yt-dlp --cookies-from-browser chrome"
 
 alias yd="yarn dev"
+alias nrd="npm run dev"
 alias yb="yarn build"
 alias venv="python3 -m venv venv"
 alias vish="source ./venv/bin/activate.fish"
@@ -69,42 +71,44 @@ alias cs229="cd ~/Documents/Stanford/CS229"
 # re-sync dotfiles folder
 alias redot="stow --dir ~/dotfiles --target ~ ."
 
+fzf --fish | source
+
 function wst
-  webstorm "$(git rev-parse --show-toplevel)"
+    webstorm "$(git rev-parse --show-toplevel)"
 end
 
 
 function pyc
-  pycharm "$(git rev-parse --show-toplevel)"
+    pycharm "$(git rev-parse --show-toplevel)"
 end
 
 function gcdate
-  read -p "echo \"enter date: \"" newdate
-  set fmtdate (gdate -d "$newdate")
-  set -x GIT_AUTHOR_DATE "$fmtdate"
-  set -x GIT_COMMITTER_DATE "$fmtdate"
-  git commit $argv
+    read -p "echo \"enter date: \"" newdate
+    set fmtdate (gdate -d "$newdate")
+    set -x GIT_AUTHOR_DATE "$fmtdate"
+    set -x GIT_COMMITTER_DATE "$fmtdate"
+    git commit $argv
 end
 
 function cleartunnels
-  for tunnel in (cloudflared tunnel list --output json | jq -r '.[] | .id')
-    echo "UUID: $tunnel"
-    cloudflared tunnel delete "$tunnel"
-  end
+    for tunnel in (cloudflared tunnel list --output json | jq -r '.[] | .id')
+        echo "UUID: $tunnel"
+        cloudflared tunnel delete "$tunnel"
+    end
 end
 
 function chromeicon
-  for sz in 16 32 64 72 128 256 512;
-    convert "$argv[1].png" -resize "$szx$sz" "$argv[1]-$sz.png";
-  end;
-end;
+    for sz in 16 32 64 72 128 256 512
+        convert "$argv[1].png" -resize "$szx$sz" "$argv[1]-$sz.png"
+    end
+end
 
 function envsource
-  for line in (cat $argv | grep -v '^#')
-    set item (string split -m 1 '=' $line)
-    set -gx $item[1] $item[2]
-    echo "Exported key $item[1]"
-  end
+    for line in (cat $argv | grep -v '^#')
+        set item (string split -m 1 '=' $line)
+        set -gx $item[1] $item[2]
+        echo "Exported key $item[1]"
+    end
 end
 
 # alias for getting the advent of code input
@@ -118,21 +122,21 @@ function aoc-21
 end
 
 function mkaoc
-  set day $argv[1]
-  mkdir "day-$day"
-  cd "day-$day"
-  cp ~/Developer/samyolk/AdventOfCode/template.py "day-$day.py"
-  touch input
-  pycharm "day-$day.py"
-  pycharm input
+    set day $argv[1]
+    mkdir "day-$day"
+    cd "day-$day"
+    cp ~/Developer/samyolk/AdventOfCode/template.py "day-$day.py"
+    touch input
+    pycharm "day-$day.py"
+    pycharm input
 end
 
 function runoc
-  echo (set_color -o blue)"=> Running $argv[1].ml"(set_color normal)
-  echo
-  ocamlc -o "$argv[1].byte" "$argv[1].ml"
-  "./$argv[1].byte"
-  echo
+    echo (set_color -o blue)"=> Running $argv[1].ml"(set_color normal)
+    echo
+    ocamlc -o "$argv[1].byte" "$argv[1].ml"
+    "./$argv[1].byte"
+    echo
 end
 
 # Setting PATH for Python 3.10
@@ -141,14 +145,16 @@ set -x PATH "/Library/Frameworks/Python.framework/Versions/3.10/bin" "$PATH"
 
 
 # The next line updates PATH for the Google Cloud SDK.
- if [ -f '/Users/samyok/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/samyok/Downloads/google-cloud-sdk/path.fish.inc'; end
+if [ -f '/Users/samyok/Downloads/google-cloud-sdk/path.fish.inc' ]
+    . '/Users/samyok/Downloads/google-cloud-sdk/path.fish.inc'
+end
 
-test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish ; or true
-set PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true 
+test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell_integration.fish; or true
+set PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 set PUPPETEER_EXECUTABLE_PATH (which chromium)
 
 # opam configuration
-source /Users/samyok/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+source /Users/samyok/.opam/opam-init/init.fish >/dev/null 2>/dev/null; or true
 
 thefuck --alias | source
 
@@ -162,10 +168,10 @@ fish_vi_key_bindings
 # <<< conda initialize <<<
 function cdact
     if test -f /opt/homebrew/Caskroom/miniconda/base/bin/conda
-        eval /opt/homebrew/Caskroom/miniconda/base/bin/conda "shell.fish" "hook" $argv | source
+        eval /opt/homebrew/Caskroom/miniconda/base/bin/conda "shell.fish" hook $argv | source
     end
 end
-  export DOTNET_ROOT="/opt/homebrew/opt/dotnet@6/libexec"
+export DOTNET_ROOT="/opt/homebrew/opt/dotnet@6/libexec"
 export FISH_WAKATIME_DISABLED=true
 
 # bun
@@ -173,3 +179,7 @@ set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 pyenv init - | source
 
+# vellum stuff:
+export GOOGLE_APPLICATION_CREDENTIALS=/Users/samyok/.vellum/service-account.json
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+alias velsql="gcloud compute ssh bastion -- -o ServerAliveInterval=60 -N -L 5432:10.113.64.8:5432"
