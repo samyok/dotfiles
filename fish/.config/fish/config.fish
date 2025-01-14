@@ -16,6 +16,9 @@ function toico
     convert $argv -define icon:auto-resize=256,128,48,32,16 favicon.ico
 end
 
+set -gx EDITOR nvim
+set -gx GIT_EDITOR nvim
+
 set -x NVM_DIR ~/.nvm
 nvm use default --silent
 
@@ -33,6 +36,7 @@ alias dcrm="docker rm (docker ps -a -f status=exited -q)"
 alias yrn="npx yarn@2"
 alias gcp="git cherry-pick"
 alias gc="git commit"
+alias yeet="git push"
 alias gcundo="git reset --soft HEAD~1"
 alias gpr="gh pr checkout"
 alias gd="git diff"
@@ -48,12 +52,15 @@ alias ytdl="yt-dlp --cookies-from-browser chrome"
 
 alias yd="yarn dev"
 alias nrd="npm run dev"
+alias pn="pnpm"
 alias yb="yarn build"
 alias venv="python3 -m venv venv"
 alias vish="source ./venv/bin/activate.fish"
 
 alias dev="cd ~/Developer"
 alias hw="cd ~/Homework"
+
+alias tf="thefuck !!"
 
 # for overwriting clang g++
 alias g++="g++-13"
@@ -134,9 +141,20 @@ end
 function runoc
     echo (set_color -o blue)"=> Running $argv[1].ml"(set_color normal)
     echo
-    ocamlc -o "$argv[1].byte" "$argv[1].ml"
-    "./$argv[1].byte"
+    ocamlc -o "$argv[1].byte" "$argv[1].ml" "./$argv[1].byte"
     echo
+end
+
+function killdocker
+    echo "Stopping all running containers..."
+    docker stop (docker ps -q)
+    echo "Removing all containers..."
+    docker rm (docker ps -aq)
+    echo "Removing all volumes..."
+    docker volume rm (docker volume ls -q)
+    echo "Cleaning up dangling volumes..."
+    docker volume prune -f
+    echo "Docker cleanup complete!"
 end
 
 # Setting PATH for Python 3.10
@@ -160,12 +178,12 @@ thefuck --alias | source
 
 fish_vi_key_bindings
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-#if test -f /opt/homebrew/Caskroom/miniconda/base/bin/conda
-#    eval /opt/homebrew/Caskroom/miniconda/base/bin/conda "shell.fish" "hook" $argv | source
-#end
-# <<< conda initialize <<<
+# samyok's conda initialize
+#
+source /opt/homebrew/Caskroom/miniconda/base/etc/fish/conf.d/conda.fish
+#
+# done initing conda by samyok
+
 function cdact
     if test -f /opt/homebrew/Caskroom/miniconda/base/bin/conda
         eval /opt/homebrew/Caskroom/miniconda/base/bin/conda "shell.fish" hook $argv | source
@@ -180,6 +198,10 @@ set --export PATH $BUN_INSTALL/bin $PATH
 pyenv init - | source
 
 # vellum stuff:
-export GOOGLE_APPLICATION_CREDENTIALS=/Users/samyok/.vellum/service-account.json
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-alias velsql="gcloud compute ssh bastion -- -o ServerAliveInterval=60 -N -L 5432:10.113.64.8:5432"
+# export GOOGLE_APPLICATION_CREDENTIALS=/Users/samyok/.vellum/service-account.json
+# export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+# alias velsql="gcloud compute ssh bastion -- -o ServerAliveInterval=60 -N -L 5432:10.113.64.8:5432"
+
+# interaction stuff
+alias int="cd ~/Developer/interaction/"
+alias resetdb="killdocker && pn start:db && pn migrate"
