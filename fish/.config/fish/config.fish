@@ -205,3 +205,4 @@ pyenv init - | source
 # interaction stuff
 alias int="cd ~/Developer/interaction/"
 alias resetdb="killdocker && pn start:db && pn migrate"
+alias iosnext="pn exec next dev --experimental-https -p 3002"
