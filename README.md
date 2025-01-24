@@ -3,6 +3,7 @@
 
 * nvim
 * fish
+* ideavim
 
 ## installing stow
 
