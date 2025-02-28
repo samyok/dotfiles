@@ -9,5 +9,6 @@ email = sam@yok.dev
   c = commit
   d = diff
   p = push
+  s = switch
   # inspired by graphite's submit stack
   ss = push
