@@ -206,3 +206,10 @@ pyenv init - | source
 alias int="cd ~/Developer/interaction/"
 alias resetdb="killdocker && pn start:db && pn migrate"
 alias iosnext="pn exec next dev --experimental-https -p 3002"
+
+# pnpm
+set -Ux PNPM_HOME /Users/samyok/Library/pnpm
+
+if not contains $PNPM_HOME $PATH
+    set -Ux PATH $PNPM_HOME $PATH
+end
