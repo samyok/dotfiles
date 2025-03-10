@@ -215,5 +215,5 @@ if not contains $PNPM_HOME $PATH
 end
 
 function bullboard
-    kubectl port-forward -n monitoring (kubectl get pods -n monitoring | grep bull-dashboard | awk '{print $1}') 9999:3000
+    kubectl port-forward -n monitoring (kubectl get pods -n monitoring | grep bull-dashboard | grep "Running" | awk '{print $1}') 9999:3000
 end
