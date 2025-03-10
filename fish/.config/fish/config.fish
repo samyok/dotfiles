@@ -213,3 +213,7 @@ set -Ux PNPM_HOME /Users/samyok/Library/pnpm
 if not contains $PNPM_HOME $PATH
     set -Ux PATH $PNPM_HOME $PATH
 end
+
+function bullboard
+    kubectl port-forward -n monitoring (kubectl get pods -n monitoring | grep bull-dashboard | awk '{print $1}') 9999:3000
+end
