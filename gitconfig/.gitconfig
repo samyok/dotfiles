@@ -12,3 +12,11 @@ email = sam@yok.dev
   s = switch
   # inspired by graphite's submit stack
   ss = push
+
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
