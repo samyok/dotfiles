@@ -1,0 +1,228 @@
+{
+    "editor.formatOnSave": true,
+    "window.commandCenter": true,
+    "cursor.composer.agentLoopOnLints": false,
+    "vim.easymotion": true,
+    "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                ":"
+            ],
+            "commands": [
+                "workbench.action.showCommands"
+            ]
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "J"
+            ],
+            "after": [
+                "}"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "after": [
+                "{"
+            ]
+        },
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        {
+            "before": [
+                "tab"
+            ],
+            "commands": [
+                "workbench.action.nextEditor"
+            ]
+        },
+        {
+            "before": [
+                "shift+tab",
+            ],
+            "commands": [
+                "workbench.action.previousEditor"
+            ]
+        },
+        {
+            "before": [
+                ","
+            ],
+            "commands": [
+                "vspacecode.space",
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "J"
+            ],
+            "after": [
+                "}"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "after": [
+                "{"
+            ]
+        },
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "vspacecode.space"
+            ]
+        },
+        {
+            "before": [
+                ","
+            ],
+            "commands": [
+                "vspacecode.space",
+                // {
+                //     "command": "whichkey.triggerKey",
+                //     "args": "m"
+                // }
+            ]
+        },
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        }
+    ],
+    "vspacecode.bindingOverrides": [
+        {
+            "keys": "g.g",
+            "name": "Go to definition",
+            "type": "command",
+            "command": "editor.action.goToDeclaration"
+        },
+        {
+            "keys": "g.t",
+            "name": "Go to type definition",
+            "type": "command",
+            "command": "editor.action.goToTypeDefinition"
+        },
+        {
+            "keys": "h.t",
+            "name": "Go to type definition",
+            "type": "command",
+            "command": "editor.action.goToTypeDefinition"
+        },
+        {
+            "keys": "h.g",
+            "name": "Peek definition",
+            "type": "command",
+            "command": "editor.action.peekDefinition"
+        },
+        {
+            "keys": "r.n",
+            "name": "Rename symbol",
+            "type": "command",
+            "command": "editor.action.rename"
+        },
+        {
+            "keys": "a",
+            "name": "AI...",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "t",
+                    "name": "Toggle AI Chat",
+                    "type": "command",
+                    "command": "workbench.action.toggleAuxiliaryBar"
+                }
+            ]
+        }
+    ],
+    "workbench.colorTheme": "Webstorm New Darcula",
+    "editor.lineNumbers": "relative",
+    "vim.smartRelativeLine": true,
+    "workbench.editor.enablePreview": false,
+    "javascript.inlayHints.enumMemberValues.enabled": true,
+    "typescript.inlayHints.enumMemberValues.enabled": true,
+    "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+    "typescript.inlayHints.parameterTypes.enabled": true,
+    "typescript.inlayHints.variableTypes.enabled": true,
+    "editor.inlayHints.fontSize": 9,
+    "editor.inlayHints.padding": true,
+    "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "javascript.inlayHints.parameterTypes.enabled": true,
+    "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+    "javascript.inlayHints.variableTypes.enabled": true,
+    "javascript.inlayHints.parameterNames.enabled": "all",
+    "typescript.inlayHints.parameterNames.enabled": "all",
+    "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "files.autoSave": "onFocusChange",
+    "workbench.iconTheme": "vscode-jetbrains-icon-theme-2023-dark",
+    "terminal.external.osxExec": "Ghostty.app",
+    "terminal.integrated.defaultProfile.osx": "fish",
+    "terminal.integrated.suggest.enabled": true,
+    "typescript.tsserver.maxTsServerMemory": 4096,
+    "typescript.tsserver.log": "verbose",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "extensions.ignoreRecommendations": true,
+    "sync.gist": "9932ad9179b474a8ae942cee558b6ab6",
+    "sync.autoDownload": true,
+    "sync.autoUpload": false,
+}
