@@ -180,6 +180,12 @@
             "command": "editor.action.rename"
         },
         {
+            "keys": "r.r",
+            "name": "Debug",
+            "type": "command",
+            "command": "workbench.action.debug.start",
+        },
+        {
             "keys": "a",
             "name": "AI...",
             "type": "bindings",
