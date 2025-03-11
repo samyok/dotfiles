@@ -199,7 +199,7 @@
             ]
         }
     ],
-    "workbench.colorTheme": "Webstorm New Darcula",
+    "workbench.colorTheme": "JetBrains Darcula Theme",
     "editor.lineNumbers": "relative",
     "vim.smartRelativeLine": true,
     "workbench.editor.enablePreview": false,
@@ -223,7 +223,7 @@
     "terminal.integrated.defaultProfile.osx": "fish",
     "terminal.integrated.suggest.enabled": true,
     "typescript.tsserver.maxTsServerMemory": 4096,
-    "typescript.tsserver.log": "verbose",
+    "typescript.tsserver.log": "off",
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
