@@ -181,7 +181,13 @@
         },
         {
             "keys": "r.r",
-            "name": "Debug",
+            "name": "Debug: Restart",
+            "type": "command",
+            "command": "workbench.action.debug.restart",
+        },
+        {
+            "keys": "r.c",
+            "name": "Debug Current File",
             "type": "command",
             "command": "workbench.action.debug.start",
         },
