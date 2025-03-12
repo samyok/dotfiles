@@ -153,6 +153,10 @@
 		"command": "workbench.action.quickOpen"
 	},
 	{
+		"key": "alt alt",
+		"command": "workbench.action.showAllSymbols",
+	},
+	{
 		"key": "ctrl+i",
 		"command": "workbench.files.action.focusOpenEditorsView"
 	},

@@ -231,4 +231,6 @@
     "sync.gist": "9932ad9179b474a8ae942cee558b6ab6",
     "sync.autoDownload": true,
     "sync.autoUpload": false,
+    "git.autofetch": true,
+    "workbench.panel.showLabels": false,
 }
